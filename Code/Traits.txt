@@ -1,0 +1,51 @@
+//Traits can have abstract and non-abstract variable, functions. 
+
+
+trait Nasa {
+
+  // abstract variable
+  val missile_name:String
+  val planet:String
+  val tenure:Double  
+
+  def launch_pad()    //abstract function
+
+}
+
+trait SpaceX {
+
+  val foundation:Int
+
+}
+
+class Moon_mission extends Nasa with SpaceX{
+
+  val missile_name = "S-6"
+  val planet = "Moon"
+  val tenure = 2.0
+
+  val foundation = 2008
+
+
+
+  def launch_pad() = {
+
+    println("Nasa extended support to spacex and founded in  " +
+      foundation + " year.")
+  }
+
+    def mission() = {
+      val res = missile_name + " is going to " + planet + " and will " +
+        "reach in " + tenure + " years"
+
+      println(res)
+    }
+}
+
+object nsp extends App {
+
+  val ns = new Moon_mission()
+  ns.launch_pad()
+  ns.mission()
+
+}
